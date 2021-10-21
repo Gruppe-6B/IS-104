@@ -1,2 +1,2 @@
 # VINK
-Repository for prosjekt i IS-104
+Repository for VINK-prosjektet
