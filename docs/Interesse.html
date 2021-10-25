@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VINK</title>
+
+    <!-- Font Awesome - kun bruk til ikoner -->
+    <script src="https://kit.fontawesome.com/4f5d540837.js" crossorigin="anonymous"></script>
+</head>
+
+
+<body>
+    <div class="container">
+        <h3 class="font">Velg dine interesser</h3>
+        <div id="ikoner" class="ikoner">
+
+        </div>
+
+        <button class="button">Tilbake</button>
+    </div>
+
+
+    <script>
+        let ikonerContainer = document.getElementById("ikoner");
+        //Interesser og medfølgende ikoner fra FontAwesome
+        const interesser = [
+            ["Fotball", "fa-futbol"],
+            ["Gaming", "fa-headset"],
+            ["Teknologi", "fa-laptop-code"],
+            ["Matlaging", "fa-drumstick-bite"],
+            ["Friluft", "fa-hiking"],
+            ["Fisking", "fa-fish"],
+            ["Hund", "fa-dog"],
+            ["Katt", "fa-cat"],
+            ["Sjakk", "fa-chess"],
+            ["Brettspill", "fa-dice"],
+            ["DnD", "fa-dice-d20"],
+            ["Sjøsport", "fa-water"],
+            ["Alpint", "fa-skiing"],
+            ["Langrenn", "fa-skiing-nordic"],
+            ["Sykling", "fa-biking"],
+            ["Løping", "fa-running"],
+            ["Golf", "fa-golf-ball"],
+            ["Bowling", "fa-bowling-ball"],
+
+        ];
+        //for hver interesse, generer ikon
+        for (let i = 0; i < interesser.length; i++)
+            lagIkon(interesser[i]);
+
+        //Genererer en rad med input og tekst basert på listen over spørsmål ("spm")
+        function lagIkon(item) {
+            let div = document.createElement('div');
+            div.classList.add("ikon","tooltip");
+
+
+            div.innerHTML = '<i class="fa ' + item[1] + '"></i><span class="tooltiptext">' + item[0] + '</span>';
+
+            div.onclick = function(e) {
+                console.log(e);
+                toggleSelect(this);
+            }
+            ikonerContainer.append(div);
+        }
+
+
+        function toggleSelect(e) {
+            e.classList.toggle("ikonselected");
+        }
+
+        form.addEventListener("submit", function(e) {
+            e.preventDefault();
+            localStorage.setItem("navn", e.target.navn.value)
+            localStorage.setItem("bursdag", e.target.bursdag.value)
+            localStorage.setItem("sted", e.target.sted.value)
+            localStorage.setItem("bio", e.target.bio.value)
+            window.location.replace("/Interesse.html");
+        })
+    </script>
+</body>
+</html>
