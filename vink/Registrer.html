@@ -1,10 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VINK</title>
+
+    <!-- Font Awesome - kun bruk til ikoner -->
+    <script src="https://kit.fontawesome.com/4f5d540837.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
+<a href="index.html" onclick="return confirm('Vil du avbryte registreringen?')"><img src="/img/247103202_1038603346966777_4749167084376452329_n.jpg" width="100px;"></a>
+<form class="container" id="formen">
+    <h2 class="font">Velkommen 🎉</h2>
+    <input class="input" name="epost" type="email" placeholder="Epost">
+    <input class="input" name="brukernavn" type="text" placeholder="Brukernavn">
+    <input class="input" name="passord" type="password" placeholder="Passord">
+    <input class="input" name="bekreftpassord" type="password" placeholder="Bekreft passord">
+    <button type="submit" class="button button-dark">Neste <i class="fa fa-chevron-right"></i></button>
 
+    <a href="index.html" class="button"><i class="fa fa-chevron-right"></i> Tilbake</a>
+</form>
+
+<script>
+    let form = document.getElementById("formen")
+    form.addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        localStorage.setItem("epost", e.target.epost.value)
+        localStorage.setItem("brukernavn", e.target.brukernavn.value)
+        if (e.target.passord.value === e.target.bekreftpassord.value) {
+            localStorage.setItem("passord", e.target.passord.value)
+        }
+        window.location.replace("/Personalia.html");
+    })
+</script>
 </body>
 </html>
