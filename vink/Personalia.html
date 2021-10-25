@@ -1,10 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VINK</title>
+
+    <!-- Font Awesome - kun bruk til ikoner -->
+    <script src="https://kit.fontawesome.com/4f5d540837.js" crossorigin="anonymous"></script>
 </head>
 <body>
+<a href="index.html" onclick="return confirm('Vil du avbryte registreringen?')"><img src="/img/247103202_1038603346966777_4749167084376452329_n.jpg" width="100px;"></a>
+<form class="container" id="formen">
+   <h3 class="font">Vi vil vite mer om deg!</h3>
+    <label for="navn">Navn</label>
+    <input class="input" type="text" id="navn" name="navn" placeholder="Navn">
+    <label for="bursdag">Bursdag</label>
+    <input class="input" type="date" id="bursdag" name="bursdag" placeholder="Bursdag (dd.mm.åååå)">
+    <label for="sted">Sted</label>
+    <input class="input" type="text" id="sted" name="sted" placeholder="Sted">
+    <label for="bio">Bio</label>
+    <textarea class="input resizedTextbox" id="bio" name="bio" placeholder="Bio" rows="6"></textarea>
 
+
+    <button type="submit" class="button button-dark">Neste <i class="fa fa-chevron-right"></i></button>
+    <button class="button" ><i class="fa fa-chevron-left"></i> Tilbake</button>
+
+
+</form>
+
+<script>
+    let form = document.getElementById("formen")
+    form.addEventListener("submit", function(e) {
+        e.preventDefault();
+        localStorage.setItem("navn", e.target.navn.value)
+        localStorage.setItem("bursdag", e.target.bursdag.value)
+        localStorage.setItem("sted", e.target.sted.value)
+        localStorage.setItem("bio", e.target.bio.value)
+        window.location.replace("/Interesse.html");
+    })
+</script>
 </body>
 </html>
