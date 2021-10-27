@@ -11,7 +11,7 @@
 
 </head>
 <body>
-<a href="index.html" onclick="return confirm('Vil du avbryte registreringen?')"><img src="/img/247103202_1038603346966777_4749167084376452329_n.jpg" width="100px;"></a>
+<a href="index.html" onclick="return confirm('Vil du avbryte registreringen?')"><img src="img/247103202_1038603346966777_4749167084376452329_n.jpg" width="100px;" /></a>
 <form class="container" id="formen">
     <h2 class="font">Velkommen 🎉</h2>
     <input class="input" name="epost" type="email" placeholder="Epost">
@@ -20,7 +20,7 @@
     <input class="input" name="bekreftpassord" type="password" placeholder="Bekreft passord">
     <button type="submit" class="button button-dark">Neste <i class="fa fa-chevron-right"></i></button>
 
-    <a href="index.html" class="button"><i class="fa fa-chevron-right"></i> Tilbake</a>
+    <a href="index.html" class="button"><i class="fa fa-chevron-left"></i> Tilbake</a>
 </form>
 
 <script>
@@ -33,7 +33,7 @@
         if (e.target.passord.value === e.target.bekreftpassord.value) {
             localStorage.setItem("passord", e.target.passord.value)
         }
-        window.location.replace("/Personalia.html");
+        window.location.replace("Personalia.html");
     })
 </script>
 </body>
