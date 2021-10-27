@@ -13,11 +13,24 @@
 <body>
     <div class="container">
         <img src="/img/245432962_293876899021534_681468418813278532_n.jpg" class="logo">
-        <button class="button button-dark"><i class="fa fa-key"></i> Logg inn</button>
-        <a href="Registrer.html" class="button">Registrer</a>
+        <button class="button button-dark" id="login-button"><i class="fa fa-key"></i> Logg inn</button>
+        <button class="button" id="registrer-button">Registrer</button>
         <i class="fa fa-cube"></i>
         <p class="font">Made in Norway</p>
     </div>
 
+<script>
+    let registerButton = document.getElementById("registrer-button")
+    registerButton.addEventListener("click", function(e) {
+        e.preventDefault();
+        window.location.href = "/Registrer.html"
+    })
+
+    let loginButton = document.getElementById("login-button")
+    loginButton.addEventListener("click", function(e) {
+        e.preventDefault();
+        alert("Login not implemented, pls register 😁")
+    })
+</script>
 </body>
 </html>
