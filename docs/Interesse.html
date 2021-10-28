@@ -13,12 +13,12 @@
 
 <body>
     <div class="container">
-        <h3 class="font">Velg dine interesser</h3>
+        <h3 class="font" id="velkommen">Velg dine interesser</h3>
         <div id="ikoner" class="ikoner">
 
         </div>
-
-        <button class="button">Tilbake</button>
+        <button class="button button-dark" id="submit-button"><i class="fa fa-save"></i> Fullfør registrering</button>
+        <button class="button" id="back-button"><i class="fa fa-chevron-left"></i> Tilbake</button>
     </div>
 
 
@@ -59,25 +59,26 @@
             div.innerHTML = '<i class="fa ' + item[1] + '"></i><span class="tooltiptext">' + item[0] + '</span>';
 
             div.onclick = function(e) {
-                console.log(e);
-                toggleSelect(this);
+
+                this.classList.toggle("ikonselected");
             }
             ikonerContainer.append(div);
         }
 
 
-        function toggleSelect(e) {
-            e.classList.toggle("ikonselected");
-        }
 
-        form.addEventListener("submit", function(e) {
+
+
+
+        let backButton = document.getElementById("back-button")
+        backButton.addEventListener("click", function(e) {
             e.preventDefault();
-            localStorage.setItem("navn", e.target.navn.value)
-            localStorage.setItem("bursdag", e.target.bursdag.value)
-            localStorage.setItem("sted", e.target.sted.value)
-            localStorage.setItem("bio", e.target.bio.value)
-            window.location.replace("/Interesse.html");
+            window.location.href = "Personalia.html"
         })
+
+        let velkommen = document.getElementById("velkommen");
+        velkommen.innerHTML = "Hei " + localStorage.getItem("navn") + ", velg dine interesser";
+        console.log(localStorage.getItem("navn"));
     </script>
 </body>
 </html>
