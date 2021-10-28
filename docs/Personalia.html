@@ -30,21 +30,21 @@
 </form>
 
 <script>
-    let form = document.getElementById("formen")
+    let form = document.getElementById("formen");
     form.addEventListener("submit", function(e) {
         e.preventDefault();
-        localStorage.setItem("navn", e.target.navn.value)
-        localStorage.setItem("bursdag", e.target.bursdag.value)
-        localStorage.setItem("sted", e.target.sted.value)
-        localStorage.setItem("bio", e.target.bio.value)
+        localStorage.setItem("navn", e.target.navn.value);
+        localStorage.setItem("bursdag", e.target.bursdag.value);
+        localStorage.setItem("sted", e.target.sted.value);
+        localStorage.setItem("bio", e.target.bio.value);
         window.location.href = "Interesse.html";
-    })
+    });
 
-    let backButton = document.getElementById("back-button")
+    let backButton = document.getElementById("back-button");
     backButton.addEventListener("click", function(e) {
         e.preventDefault();
         window.location.href = "Registrer.html"
-    })
+    });
 </script>
 </body>
 </html>

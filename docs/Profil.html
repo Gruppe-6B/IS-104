@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VINK</title>
+    <title>VINK - Profil</title>
 
     <!-- Font Awesome - kun bruk til ikoner -->
     <script src="https://kit.fontawesome.com/4f5d540837.js" crossorigin="anonymous"></script>
@@ -13,12 +13,11 @@
 
 <body>
     <div class="container">
-        <h3 class="font" id="velkommen">Velg dine interesser</h3>
+        <h3 class="font" id="velkommen">Profil</h3>
         <div id="ikoner" class="ikoner">
 
         </div>
-        <button class="button button-dark" id="submit-button"><i class="fa fa-save"></i> Fullfør registrering</button>
-        <button class="button" id="back-button"><i class="fa fa-chevron-left"></i> Tilbake</button>
+        <button class="button button-dark" >En button</button>
     </div>
 
 
@@ -46,61 +45,31 @@
             ["Bowling", "fa-bowling-ball"],
 
         ];
-        var valgteInteresser = [];
+        var valgteInteresser = JSON.parse(localStorage.getItem("interesser"));
+        console.log(valgteInteresser);
 
         //for hver interesse, generer ikon
-        for (let i = 0; i < interesser.length; i++)
-            lagIkon(interesser[i]);
+        for (let i = 0; i < valgteInteresser.length; i++)
+            lagIkon(valgteInteresser[i]);
 
         //Genererer en rad med input og tekst basert på listen over spørsmål ("spm")
-        function lagIkon(item) {
+        function lagIkon(x) {
+            let item = interesser.filter(function(value, index, arr) {
+                return value[0] === x;
+            })[0];
             let div = document.createElement('div');
-            div.classList.add("ikon","tooltip");
+            div.classList.add("ikon","tooltip", "ikonselected");
 
 
             div.innerHTML = '<i class="fa ' + item[1] + '"></i><span class="tooltiptext">' + item[0] + '</span>';
 
-            div.onclick = function(e) {
-
-                this.classList.toggle("ikonselected");
-
-                if (this.classList.contains("ikonselected")) {
-                    valgteInteresser.push(item[0]);
-                }
-                else
-                    fjernInteresse(item[0]);
-
-                console.log(valgteInteresser);
-                localStorage.setItem("interesser", JSON.stringify(valgteInteresser));
-            }
             ikonerContainer.append(div);
 
         }
 
 
-        function fjernInteresse(txt) {
-            valgteInteresser = valgteInteresser.filter(function(value, index, arr) {
-                return value !== txt;
-            })
-        }
-
-
-
-
-        let submitButton = document.getElementById("submit-button");
-        submitButton.addEventListener("click", function(e) {
-            e.preventDefault();
-            window.location.href = "Profil.html"
-        });
-
-        let backButton = document.getElementById("back-button")
-        backButton.addEventListener("click", function(e) {
-            e.preventDefault();
-            window.location.href = "Personalia.html"
-        })
-
         let velkommen = document.getElementById("velkommen");
-        velkommen.innerHTML = "Hei " + localStorage.getItem("navn") + ", velg dine interesser";
+        velkommen.innerHTML = "Profil - " + localStorage.getItem("navn");
         console.log(localStorage.getItem("navn"));
     </script>
 </body>
