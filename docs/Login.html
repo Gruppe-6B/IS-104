@@ -11,19 +11,15 @@
     <title>VINK - Logg inn</title>
 </head>
 <body>
-<div class="container">
     <a href="index.html" onclick="return confirm('Vil du gå tilbake?')"><img src="img/247103202_1038603346966777_4749167084376452329_n.jpg" width="100px;"></a>
 
-    <h1 style="font-family: Arial; font-size: 24; max-width: 184px; text-align: center">Velkommen tilbake!</h1>
-
-    <form>
-        <input type="text" id="brukernavn" name="brukernavn" placeholder="Brukernavn"><br>
-        <input type="text" id="passord" name="passord" placeholder="Passord">
+    <form class="container">
+        <h1 style="font-family: Arial; font-size: 24; max-width: 184px; text-align: center">Velkommen tilbake!</h1>
+        <input class="input" type="text" id="brukernavn" name="brukernavn" placeholder="Brukernavn">
+        <input class="input" type="text" id="passord" name="passord" placeholder="Passord">
+        <button class="button button-dark" id="login-button">Logg inn</button>
+        <button class="button" id="index-button">Tilbake</button>
     </form>
-
-    <button class="button button-dark" id="login-button">Logg inn</button>
-    <button class="button" id="index-button">Tilbake</button>
-</div>
 
 <script>
     let indexButton = document.getElementById("index-button")
