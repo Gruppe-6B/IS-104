@@ -7,25 +7,35 @@
     <title>Chatter</title>
 
     <script src="https://kit.fontawesome.com/4f5d540837.js" crossorigin="anonymous"></script>
-    <form>
-        <input type="button" value=<i class="fa arrow-left"></i> onclick="history.back()">
-    </form>
 </head>
 <body>
-<h1 class="font">Dine chatter</h1>
-<script>
-    let ikonerContainer = document.getElementById("ikoner");
-</script>
-<!Forslag fra: https://www.w3schools.com/js/tryit.asp?filename=tryjs_dom_table_createcaption>
-<table id="Chat 1" style="border: 2px solid black">
-    <tr>
-        <td> <i class="fa fa-user"></i> class="font">Per (epost?)</td>
-    </tr>
-</table>
-<table id="Chat 2" style="border: 2px solid black">
-    <tr>
-        <td class="font">Olav (epost?)</td>
-    </tr>
-</table>
+    <div class="container">
+        <button onclick="history.back()">
+             <i class="fa arrow-left"></i>
+        </button>
+        <h1 class="font">Dine chatter</h1>
+        <script>
+            let ikonerContainer = document.getElementById("ikoner");
+        </script>
+        <!Forslag fra: https://www.w3schools.com/js/tryit.asp?filename=tryjs_dom_table_createcaption>
+        <table id="Chat 1" style="border: 2px solid black">
+            <tr>
+                <td> <i class="fa fa-user"></i> class="font">Per (epost?)</td>
+            </tr>
+        </table>
+        <table id="Chat 2" style="border: 2px solid black">
+            <tr>
+                <td class="font">Olav (epost?)</td>
+            </tr>
+        </table>
+        <div class="navbar">
+            <!--Interesser og medfølgende ikoner fra FontAwesome-->
+            <a href="Profil.html"><i class="fas fa-user"><br>Profil</i></a>
+            <a><i class="fas fa-users"><br>Match pref.</i></a>
+            <a><i class="fas fa-bell"><br>Varslinger</i></a>
+            <a><i class="fas fa-comment-alt"><br>Meldinger</i></a>
+            <a><i class="fas fa-user-cog"><br>Innstillinger</i></a>
+        </div>
+    </div>
  </body>
 </html>
