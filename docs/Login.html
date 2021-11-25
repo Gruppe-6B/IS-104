@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css?q=0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font Awesome - kun bruk til ikoner -->
+    <script src="https://kit.fontawesome.com/4f5d540837.js" crossorigin="anonymous"></script>
+
+    <title>VINK</title>
+</head>
+<body>
+<div class="container">
+    <img src="img/245432962_293876899021534_681468418813278532_n.jpg" class="logo">
+    <button class="button button-dark" id="login-button"><i class="fa fa-key"></i> Logg inn</button>
+    <button class="button" id="registrer-button">Tilbake</button>
+</div>
+
+<script>
+    let registerButton = document.getElementById("registrer-button")
+    registerButton.addEventListener("click", function(e) {
+        e.preventDefault();
+        window.location.href = "Registrer.html"
+    })
+
+    let loginButton = document.getElementById("login-button")
+    loginButton.addEventListener("click", function(e) {
+        e.preventDefault();
+        alert("Login not implemented, pls register 😁")
+    })
+</script>
+</body>
+</html>
