@@ -13,6 +13,7 @@
 
 <body>
     <div class="container">
+        <a href="index.html" onclick="return confirm('Vil du avbryte registreringen?')"><img src="img/247103202_1038603346966777_4749167084376452329_n.jpg" width="100px;"></a>
         <h3 class="font" id="velkommen">Velg dine interesser</h3>
         <div id="ikoner" class="ikoner">
 
@@ -90,6 +91,20 @@
         let submitButton = document.getElementById("submit-button");
         submitButton.addEventListener("click", function(e) {
             e.preventDefault();
+
+            const bruker = {
+                epost: localStorage.getItem("epost"),
+                brukernavn: localStorage.getItem("brukernavn"),
+                passord: localStorage.getItem("passord"),
+                navn: localStorage.getItem("navn"),
+                bursdag: localStorage.getItem("bursdag"),
+                sted: localStorage.getItem("sted"),
+                bio: localStorage.getItem("bio"),
+                interesser: valgteInteresser
+
+            }
+
+            localStorage.setItem("bruker", JSON.stringify(bruker));
             window.location.href = "Profil.html"
         });
 

@@ -13,15 +13,52 @@
 
 <body>
     <div class="container">
-        <h3 class="font" id="velkommen">Profil</h3>
-        <div id="ikoner" class="ikoner">
+        <img src="img/247103202_1038603346966777_4749167084376452329_n.jpg" width="100px;">
+        <div class="hvitBoks">
+            <div class="brukerIkon" >
+                <i class="fa fa-user" style="color: cadetblue"></i>
+            </div>
+            <h3 class="font" id="velkommen"></h3>
+            <div id="ikoner" class="ikonerProfil">
 
+            </div>
+
+            <div id="bio" class="tekstBoks">
+
+            </div>
         </div>
-        <button class="button button-dark" >En button</button>
+
+        <button class="button button-dark" >FINN VENNER!</button>
     </div>
 
 
     <script>
+
+        //statiske brukere:
+        const brukere = [
+            {
+                epost: "test@uia.no",
+                brukernavn: "tester",
+                passord: "1234",
+                navn: "Per",
+                bursdag: "",
+                sted: "Kristiansand",
+                bio: "Litt tekst her",
+                interesser: ["Gaming", "Fisking", "Sykling"],
+            },
+            {
+                epost: "test2@uia.no",
+                brukernavn: "tester2",
+                passord: "1234",
+                navn: "Olav",
+                bursdag: "",
+                sted: "Kristiansand",
+                bio: "Litt tekst her 22",
+                interesser: ["Gaming", "Fisking", "Sykling"],
+            }];
+
+        console.log(brukere);
+
         let ikonerContainer = document.getElementById("ikoner");
         //Interesser og medfølgende ikoner fra FontAwesome
         const interesser = [
@@ -45,12 +82,18 @@
             ["Bowling", "fa-bowling-ball"],
 
         ];
-        var valgteInteresser = JSON.parse(localStorage.getItem("interesser"));
-        console.log(valgteInteresser);
+
+        const bruker = JSON.parse(localStorage.getItem("bruker"));
+        console.log(bruker);
+
+
+
 
         //for hver interesse, generer ikon
-        for (let i = 0; i < valgteInteresser.length; i++)
-            lagIkon(valgteInteresser[i]);
+        for (let i = 0; i < bruker.interesser.length; i++) {
+            lagIkon(bruker.interesser[i]);
+        }
+
 
         //Genererer en rad med input og tekst basert på listen over spørsmål ("spm")
         function lagIkon(x) {
@@ -61,7 +104,7 @@
             div.classList.add("ikon","tooltip", "ikonselected");
 
 
-            div.innerHTML = '<i class="fa ' + item[1] + '"></i><span class="tooltiptext">' + item[0] + '</span>';
+            div.innerHTML = '<i class="fa ' + item[1] + '"></i>';
 
             ikonerContainer.append(div);
 
@@ -69,8 +112,9 @@
 
 
         let velkommen = document.getElementById("velkommen");
-        velkommen.innerHTML = "Profil - " + localStorage.getItem("navn");
-        console.log(localStorage.getItem("navn"));
+        velkommen.innerHTML = bruker.navn;
+        let bio = document.getElementById("bio");
+        bio.innerHTML = bruker.bio.replace("\n", "<br>");
     </script>
 </body>
 </html>
