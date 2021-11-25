@@ -8,20 +8,28 @@
     <!-- Font Awesome - kun bruk til ikoner -->
     <script src="https://kit.fontawesome.com/4f5d540837.js" crossorigin="anonymous"></script>
 
-    <title>VINK</title>
+    <title>VINK - Logg inn</title>
 </head>
 <body>
 <div class="container">
-    <img src="img/245432962_293876899021534_681468418813278532_n.jpg" class="logo">
-    <button class="button button-dark" id="login-button"><i class="fa fa-key"></i> Logg inn</button>
-    <button class="button" id="registrer-button">Tilbake</button>
+    <a href="index.html" onclick="return confirm('Vil du gå tilbake?')"><img src="img/247103202_1038603346966777_4749167084376452329_n.jpg" width="100px;"></a>
+
+    <h1 style="font-family: Arial; font-size: 24; max-width: 184px; text-align: center">Velkommen tilbake!</h1>
+
+    <form>
+        <input type="text" id="brukernavn" name="brukernavn" placeholder="Brukernavn"><br>
+        <input type="text" id="passord" name="passord" placeholder="Passord">
+    </form>
+
+    <button class="button button-dark" id="login-button">Logg inn</button>
+    <button class="button" id="index-button">Tilbake</button>
 </div>
 
 <script>
-    let registerButton = document.getElementById("registrer-button")
-    registerButton.addEventListener("click", function(e) {
+    let indexButton = document.getElementById("index-button")
+    indexButton.addEventListener("click", function(e) {
         e.preventDefault();
-        window.location.href = "Registrer.html"
+        window.location.href = "index.html"
     })
 
     let loginButton = document.getElementById("login-button")
