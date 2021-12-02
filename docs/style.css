@@ -238,3 +238,9 @@ a {
     border-color: #337a26;
     opacity: 1;
 }
+
+.chatbutton {
+    border: 1px solid #c8c8c8;
+    width: 90%;
+    max-height: 50px;
+}
