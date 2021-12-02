@@ -4,37 +4,33 @@
     <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale 1.0">
-    <title>Chatter</title>
-
+    <title>VINK - Chatter</title>
+    <!-- Font Awesome - kun bruk til ikoner -->
     <script src="https://kit.fontawesome.com/4f5d540837.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="container">
-        <img src="img/247103202_1038603346966777_4749167084376452329_n.jpg" width="100px;"></a>
-        <button onclick="history.back()">
-             <i class="fa arrow-left"></i>
-        </button>
+        <a href="Profil.html" onclick="return confirm('Vil du gå til din profil?')"><img src="img/247103202_1038603346966777_4749167084376452329_n.jpg" width="100px;"></a>
+
         <h1 class="font">Dine chatter</h1>
+
         <script>
             let ikonerContainer = document.getElementById("ikoner");
         </script>
-        <!Forslag fra: https://www.w3schools.com/js/tryit.asp?filename=tryjs_dom_table_createcaption>
-        <table id="Chat 1" style="border: 2px solid black">
-            <tr>
-                <td> <i class="fa fa-user"></i> <class>="font">Per (epost?)</class></td>
-            </tr>
-        </table>
-        <table id="Chat 2" style="border: 2px solid black">
-            <tr>
-                <td class="font">Olav (epost?)</td>
-            </tr>
-        </table>
+        <!--Forslag fra: https://www.w3schools.com/js/tryit.asp?filename=tryjs_dom_table_createcaption-->
+
+       <button class="button chatbutton"><i class="fa fa-user"></i> Per (epost?)</button>
+
+       <button class="button chatbutton"><i class="fa fa-user"></i> Olav (epost?)</button>
+
+
+
         <div class="navbar">
             <!--Interesser og medfølgende ikoner fra FontAwesome-->
             <a href="Profil.html"><i class="fas fa-user"><br>Profil</i></a>
             <a><i class="fas fa-users"><br>Match pref.</i></a>
             <a><i class="fas fa-bell"><br>Varslinger</i></a>
-            <a><i class="fas fa-comment-alt"><br>Meldinger</i></a>
+            <a href="Chatlist.html"><i class="fas fa-comment-alt"><br>Meldinger</i></a>
             <a><i class="fas fa-user-cog"><br>Innstillinger</i></a>
         </div>
     </div>
