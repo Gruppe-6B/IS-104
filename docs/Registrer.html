@@ -18,6 +18,9 @@
     <input class="input" name="brukernavn" type="text" placeholder="Brukernavn">
     <input class="input" name="passord" type="password" placeholder="Passord">
     <input class="input" name="bekreftpassord" type="password" placeholder="Bekreft passord">
+
+    <div id="validering" style="color: red; "></div>
+
     <button type="submit" class="button button-dark">Neste <i class="fa fa-chevron-right"></i></button>
 
     <button class="button" id="back-button"><i class="fa fa-chevron-left"></i> Tilbake</button>
@@ -25,15 +28,27 @@
 
 <script>
     let form = document.getElementById("formen")
+    let validering = document.getElementById("validering");
+
     form.addEventListener("submit", function(e) {
         e.preventDefault();
 
         localStorage.setItem("epost", e.target.epost.value)
         localStorage.setItem("brukernavn", e.target.brukernavn.value)
-        if (e.target.passord.value === e.target.bekreftpassord.value) {
-            localStorage.setItem("passord", e.target.passord.value)
+
+        if (e.target.passord.value.length < 8) {
+            validering.innerHTML = "Passordet må inneholde minst 8 tegn";
         }
-        window.location.href = "Personalia.html";
+        else if (e.target.passord.value === e.target.bekreftpassord.value) {
+            localStorage.setItem("passord", e.target.passord.value)
+            window.location.href = "Personalia.html";
+        }
+        else {
+            //feil brukernavn og/eller passord
+
+            validering.innerHTML = "Passord er ikke skrevet inn riktig";
+        }
+
     })
 
     let backButton = document.getElementById("back-button")

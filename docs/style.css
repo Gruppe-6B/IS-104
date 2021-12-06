@@ -1,6 +1,8 @@
 body{
     background-color: #333;
     margin: auto;
+    font-family: Poppins, Roboto, Verdana;
+    font-size: smaller;
 }
 
 .container {
@@ -14,7 +16,7 @@ body{
 }
 
 .navbar {
-    margin-top: 10px;
+    margin-top: auto;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -38,6 +40,13 @@ body{
 
 .navbar a:hover {
     background: #f1f1f1;
+
+}
+
+.navbar .aktivNav {
+    color: #337a26;
+    background: rgba(255,255,255,0.4);
+    box-shadow: 0px 1px 3px rgba(0,0,0,0.4);
 }
 
 .hvitBoks {
@@ -50,14 +59,22 @@ body{
     flex-direction: column;
     align-items: center;
 }
+#brukerContainer {
+    width: 90%;
+}
 
 .tekstBoks {
     padding: 10px;
     margin: 20px;
-    min-height: 200px;
+    min-height: 100px;
     width: 90%;
     border: 2px dotted #ccc;
     border-radius: 5px;
+}
+
+.brukerP {
+    margin: 5px 5px;
+    color: green;
 }
 
 label {
@@ -198,6 +215,16 @@ a {
     color: #111;
 }
 
+.ikonProfil {
+    font-size: 1.5em;
+    width: 50px;
+    height: 50px;
+    line-height: 44px;
+}
+.ikonProfil:hover {
+    font-size: 1.8em;
+}
+
 /* Tooltip fra w3schools.com - https://www.w3schools.com/css/css_tooltip.asp */
 /* Tooltip container */
 .tooltip {
@@ -244,4 +271,20 @@ a {
     width: 90%;
     max-height: 50px;
     text-align: left;
+}
+
+/* CSS animation basert på https://stackoverflow.com/questions/16989585/css-3-slide-in-from-left-transition */
+.slideDiv {
+    position: relative;
+    top: -500px;
+    -webkit-animation: slide 0.5s forwards;
+    animation: slide 0.5s forwards;
+}
+
+@-webkit-keyframes slide {
+    100% { top: 0; }
+}
+
+@keyframes slide {
+    100% { top: 0; }
 }
