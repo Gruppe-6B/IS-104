@@ -1,14 +1,73 @@
 body{
-    background-color: #EBEBEB;
+    background-color: #333;
     margin: auto;
+    font-family: Poppins, Roboto, Verdana;
+    font-size: smaller;
 }
 
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 500px;
+    max-width: 480px;
+    min-height: 760px;
+    background-color: #EBEBEB;
+    box-shadow: 3px 5px 10px rgba(0,0,0,0.7);
+}
 
+.navbar {
+    margin-top: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #d9d9d9;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid #444444;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 10px 10px;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.navbar a:hover {
+    background: #f1f1f1;
+}
+
+.hvitBoks {
+    background: #FDFDFD;
+    border-radius: 10px;
+    box-shadow: 1px 2px 5px rgba(0,0,0,0.1);
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#brukerContainer {
+    width: 90%;
+}
+
+.tekstBoks {
+    padding: 10px;
+    margin: 20px;
+    min-height: 100px;
+    width: 90%;
+    border: 2px dotted #ccc;
+    border-radius: 5px;
+}
+
+.brukerP {
+    margin: 5px 5px;
+    color: green;
 }
 
 label {
@@ -94,7 +153,14 @@ a {
     flex-flow: row wrap;
     justify-content: center;
     gap: 40px 30px;
-    margin: 36px 16px;
+    margin: 16px 8px;
+}
+.ikonerProfil {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 10px 6px;
+    margin: 16px 8px;
 }
 
 .ikon {
@@ -112,6 +178,21 @@ a {
     transition: 0.4s;
 
 }
+.brukerIkon {
+    display: block;
+    font-size: 3em;
+    text-align: center;
+    line-height: 114px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    background-color: #F4F4F4;
+    color: #444;
+    transition: 0.4s;
+    box-shadow: 1px 2px 5px rgba(0,0,0,0.1);
+}
 
 .ikon:hover {
     background-color: #FFFFFF;
@@ -125,6 +206,16 @@ a {
     box-shadow: inset 0 0 8px #337a26;
     font-size: 2.5em;
     color: #111;
+}
+
+.ikonProfil {
+    font-size: 1.5em;
+    width: 50px;
+    height: 50px;
+    line-height: 44px;
+}
+.ikonProfil:hover {
+    font-size: 1.8em;
 }
 
 /* Tooltip fra w3schools.com - https://www.w3schools.com/css/css_tooltip.asp */
@@ -166,4 +257,20 @@ a {
     visibility: visible;
     border-color: #337a26;
     opacity: 1;
+}
+
+/* CSS animation basert på https://stackoverflow.com/questions/16989585/css-3-slide-in-from-left-transition */
+.slideDiv {
+    position: relative;
+    top: -500px;
+    -webkit-animation: slide 0.5s forwards;
+    animation: slide 0.5s forwards;
+}
+
+@-webkit-keyframes slide {
+    100% { top: 0; }
+}
+
+@keyframes slide {
+    100% { top: 0; }
 }
