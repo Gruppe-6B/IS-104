@@ -32,7 +32,7 @@ const brukere = [
         bio: "Litt tekst her 22",
         interesser: ["Gaming", "Matlaging", "Sjøsport", "Langrenn"],
         kjønn: "kvinne",
-    }
+    },
 ];
 
 

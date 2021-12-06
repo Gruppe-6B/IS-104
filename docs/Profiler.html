@@ -47,7 +47,7 @@
 
         <div class="navbar">
             <!--Interesser og medfølgende ikoner fra FontAwesome-->
-            <a href="Profil.html"><i class="fas fa-user"><br>Profil</i></a>
+            <a class="aktivNav" href="Profil.html"><i class="fas fa-user"><br>Profil</i></a>
             <a><i class="fas fa-users"><br>Match pref.</i></a>
             <a><i class="fas fa-bell"><br>Varslinger</i></a>
             <a><i class="fas fa-comment-alt"><br>Meldinger</i></a>
@@ -59,7 +59,8 @@
     <script>
         //script.js innholder const variabler med statiske brukere, interesser
 
-
+        const egenBruker = JSON.parse(localStorage.getItem("bruker"));
+        console.log(egenBruker);
         let velkommen = document.getElementById("velkommen");
         let brukerContainer = document.getElementById("brukerContainer");
         let ikonerContainer = document.getElementById("ikoner");
@@ -131,13 +132,29 @@
 
 
         //Genererer en rad med input og tekst basert på listen over spørsmål ("spm")
-        function lagIkon(x) {
+        function lagIkon(interesseString) {
             let item = interesser.filter(function(value, index, arr) {
-                return value[0] === x;
+                return value[0] === interesseString;
             })[0];
             let div = document.createElement('div');
-            div.classList.add("ikon","tooltip", "ikonselected", "ikonProfil");
 
+
+            //sjekk om den lokale brukeren har samme interesse
+            let matchMedEgneInteresser = false;
+            for (let i = 0; i < egenBruker.interesser.length; i++) {
+                let interesse = egenBruker.interesser[i];
+
+                if (interesse === interesseString) {
+                    console.log(interesse);
+                    matchMedEgneInteresser = true;
+                }
+
+            }
+
+            if (matchMedEgneInteresser)
+                div.classList.add("ikon","tooltip", "ikonselected", "ikonProfil");
+            else
+                div.classList.add("ikon","tooltip", "ikonProfil");
 
             div.innerHTML = '<i class="fa ' + item[1] + '"></i>';
 
