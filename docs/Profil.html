@@ -15,7 +15,11 @@
 
 <body>
     <div class="container">
+        
         <img src="img/247103202_1038603346966777_4749167084376452329_n.jpg" width="100px;">
+            
+        
+        <a href="Index.html" style="position: absolute; left:16px; top: 10px;"><i class="fa fa-sign-out-alt"></i> Logg ut</a>
         <div class="hvitBoks">
             <div class="brukerIkon" >
                 <i class="fa fa-user" style="color: cadetblue"></i>
@@ -34,7 +38,7 @@
 
         <div class="navbar">
             <!--Interesser og medfølgende ikoner fra FontAwesome-->
-            <a href="Profil.html"><i class="fas fa-user"><br>Profil</i></a>
+            <a class="aktivNav" href="Profil.html"><i class="fas fa-user"><br>Profil</i></a>
             <a><i class="fas fa-users"><br>Match pref.</i></a>
             <a><i class="fas fa-bell"><br>Varslinger</i></a>
             <a><i class="fas fa-comment-alt"><br>Meldinger</i></a>
@@ -64,7 +68,7 @@
                 return value[0] === x;
             })[0];
             let div = document.createElement('div');
-            div.classList.add("ikon","tooltip", "ikonselected");
+            div.classList.add("ikon","tooltip", "ikonselected", "ikonProfil");
 
 
             div.innerHTML = '<i class="fa ' + item[1] + '"></i>';
