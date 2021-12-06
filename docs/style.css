@@ -266,6 +266,13 @@ a {
     opacity: 1;
 }
 
+.chatbutton {
+    border: 1px solid #c8c8c8;
+    width: 90%;
+    max-height: 50px;
+    text-align: left;
+}
+
 /* CSS animation basert på https://stackoverflow.com/questions/16989585/css-3-slide-in-from-left-transition */
 .slideDiv {
     position: relative;
