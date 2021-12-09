@@ -4,35 +4,58 @@
     <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale 1.0">
-    <title>VINK - Chatter</title>
+    <title>VINK - Samtaler</title>
+
     <!-- Font Awesome - kun bruk til ikoner -->
     <script src="https://kit.fontawesome.com/4f5d540837.js" crossorigin="anonymous"></script>
+
+    <!-- Script som innholder noen konstante variabler som vi bruker på flere sider -->
+    <script src="script.js" type="text/javascript"></script>
+
 </head>
 <body>
     <div class="container">
         <a href="Profil.html" onclick="return confirm('Vil du gå til din profil?')"><img src="img/247103202_1038603346966777_4749167084376452329_n.jpg" width="100px;"></a>
 
-        <h1 class="font">Dine chatter</h1>
-
-        <script>
-            let ikonerContainer = document.getElementById("ikoner");
-        </script>
-        <!--Forslag fra: https://www.w3schools.com/js/tryit.asp?filename=tryjs_dom_table_createcaption-->
-
-       <button class="button chatbutton"><i class="fa fa-user"></i> Per</button>
-
-       <button class="button chatbutton"><i class="fa fa-user"></i> Olav</button>
+        <h1 class="font">Dine samtaler</h1>
 
 
+        <div id="samtaler" class="samtaleContainer">
+
+        </div>
 
         <div class="navbar">
             <!--Interesser og medfølgende ikoner fra FontAwesome-->
-            <a href="Profil.html"><i class="fas fa-user"><div class="font">Profil</div></i></a>
-            <a><i class="fas fa-users"><div class="font">Match pref.</div></i></a>
-            <a><i class="fas fa-bell"><div class="font">Varslinger</div></i></a>
-            <a class="aktivNav" href="Chatlist.html"><i class="fas fa-comment-alt"><div class="font">Meldinger</div></i></a>
-            <a><i class="fas fa-user-cog"><div class="font">Innstillinger</div></i></a>
+            <a href="Profil.html"><i class="fas fa-user"></i><div class="font">Profil</div></a>
+            <a><i class="fas fa-users"></i><div class="font">Match pref.</div></a>
+            <a><i class="fas fa-bell"></i><div class="font">Varslinger</div></a>
+            <a href="Chatlist.html" class="aktivNav"><i class="fas fa-comment-alt"></i><div class="font">Meldinger</div></a>
+            <a><i class="fas fa-user-cog"></i><div class="font">Innstillinger</div></a>
         </div>
     </div>
- </body>
+
+    <script>
+        //script.js innholder const variabler med statiske brukere, interesser
+        const egenBruker = JSON.parse(localStorage.getItem("bruker"));
+        let samtalerContainer = document.getElementById("samtaler");
+
+        console.log(samtalerContainer);
+        for (let i = 0; i < brukere.length; i++) {
+            let bruker = brukere[i];
+            console.log(bruker);
+            skrivBrukerSamtale(bruker);
+        }
+
+
+        function skrivBrukerSamtale(bruker) {
+            console.log("test");
+            let a = document.createElement('a');
+            a.href = 'chat.html?brukerNavn=' + bruker.brukernavn;
+            a.classList.add("samtaleListeElement");
+            a.innerHTML = '<i class="fa fa-user" style="color: #337a26; margin-right: 5px;"></i> ' + bruker.navn
+
+            samtalerContainer.append(a);
+        }
+    </script>
+</body>
 </html>

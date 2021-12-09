@@ -28,19 +28,25 @@ body{
     border-top: 1px solid #444444;
 }
 
+.navbar i {
+    font-size: 20px;
+}
+
 .navbar a {
     float: left;
     display: block;
     color: black;
     text-align: center;
-    padding: 10px 10px;
+    padding: 10px 0px;
     text-decoration: none;
-    font-size: 15px;
+    font-size: 14px;
+    margin-top: auto;
+    margin-bottom: auto;
+    width:20%;
 }
 
 .navbar a:hover {
     background: #f1f1f1;
-
 }
 
 .navbar .aktivNav {
@@ -144,7 +150,7 @@ label {
 }
 
 .font {
-    font-family: Arial, Helvetica, serif;
+    font-family:  Helvetica, Arial, serif;
 }
 
 a {
@@ -223,6 +229,70 @@ a {
 }
 .ikonProfil:hover {
     font-size: 1.8em;
+}
+
+/* Chat samtaler liste */
+.samtaleContainer {
+    width: 90%;
+}
+.samtaleListeElement {
+    background-color: #FDFDFD;
+    color: #070d1a;
+    width: auto;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    height: 50px;
+    line-height: 50px;
+    margin-top: 15px;
+    padding-left: 20px;
+    display: block;
+    font-size: 18px;
+}
+.samtaleListeElement:hover {
+    background-color: #FFF;
+    box-shadow: 2px 3px 10px rgba(0,0,0,0.4);
+}
+
+/* Chat */
+#titleBar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #ccc;
+    width:100%;
+    gap: 0px;
+    font-size: 20px;
+
+}
+#titleBar a {
+    color: #070d1a;
+}
+
+.chatContainer {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+}
+
+.chatBoble {
+    border: 1px solid #888;
+    border-radius: 10px;
+    background-color: #FFF;
+    max-width: 70%;
+    font-size: 15px;
+    padding: 10px;
+
+}
+.chatBobleLeft {
+    margin-left: 10px;
+    margin-right: auto;
+}
+.chatBobleRight {
+    margin-left: auto;
+    margin-right: 10px;
+    background-color: #84a98c;
 }
 
 /* Tooltip fra w3schools.com - https://www.w3schools.com/css/css_tooltip.asp */

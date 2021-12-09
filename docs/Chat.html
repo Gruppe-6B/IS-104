@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VINK - Profil</title>
+
+    <!-- Font Awesome - kun bruk til ikoner -->
+    <script src="https://kit.fontawesome.com/4f5d540837.js" crossorigin="anonymous"></script>
+    <!-- Script som innholder noen konstante variabler som vi bruker på flere sider -->
+    <script src="script.js" type="text/javascript"></script>
+</head>
+
+
+<body>
+    <div class="container">
+        <div id="titleBar">
+            <a href="Chatlist.html"><i class="fa fa-arrow-left" style="font-size: 25px; margin: 20px;"></i></a>
+            <div class="brukerIkon ikonProfil" style="margin: 10px 8px;">
+                <i class="fa fa-user" style="color: cadetblue;"></i>
+            </div>
+        </div>
+
+        <div class="chatContainer" id="chatContainer">
+            <div class="chatBoble chatBobleRight"><span style="font-size: 50px;">👋</span></div>
+            <div class="chatBoble chatBobleLeft"><span style="font-size: 50px;">👋</span> Hei!</div>
+
+        </div>
+
+        <div style="width: 95%; padding: 10px 10px; display: flex; flex-direction: row; margin-top: auto;">
+
+            <input id="chatInput" onchange="nyMelding()" type="text" style="flex-grow: 1; font-size: 18px; height:40px; width:auto; box-sizing: content-box; margin-right:0px; border-top-left-radius: 5px; border-bottom-left-radius: 5px; border-bottom-right-radius: 0px; border-top-right-radius: 0px;" placeholder="Skriv en melding" />
+            <button onclick="nyMelding()" style="height:40px; width: 40px; border-top-left-radius: 0px; border-bottom-left-radius: 0px; border-bottom-right-radius: 5px; border-top-right-radius: 5px; background-color: darkblue; color: #fff; border: 1px solid #000; box-sizing: content-box; left:0px;"><i class="fa fa-send"></i></button>
+        </div>
+
+
+        <div class="navbar" style="margin-top: 10px;">
+            <!--ikoner fra FontAwesome-->
+            <a href="Profil.html"><i class="fas fa-user"></i><div class="font">Profil</div></a>
+            <a><i class="fas fa-users"></i><div class="font">Match pref.</div></a>
+            <a><i class="fas fa-bell"></i><div class="font">Varslinger</div></a>
+            <a href="Chatlist.html" class="aktivNav"><i class="fas fa-comment-alt"></i><div class="font">Meldinger</div></a>
+            <a><i class="fas fa-user-cog"></i><div class="font">Innstillinger</div></a>
+        </div>
+    </div>
+
+
+    <script>
+        //søk i query parametere etter brukernavn slik at en spesifikk bruker kan vises via URL:
+        let brukerIndex = 0;
+        const params = new URLSearchParams(window.location.search);
+        const brukerNavn = params.get('brukerNavn');
+        if (brukerNavn != null) {
+            for (let i = 0; i < brukere.length; i++) {
+                if (brukere[i].brukernavn === brukerNavn)
+                    brukerIndex = i;
+            }
+        }
+        let bruker = brukere[brukerIndex];
+
+        //bruker og lenke til profil i tittel
+        let titleBar = document.getElementById("titleBar");
+        let brukerTittel = document.createElement('a');
+        brukerTittel.href = "Profiler.html?brukerNavn=" + bruker.brukernavn;
+        brukerTittel.innerHTML = bruker.navn;
+        titleBar.append(brukerTittel);
+
+        //kode for å legge til nye meldinger som brukeren skriver inn
+        let chatContainer = document.getElementById("chatContainer");
+        let chatInput = document.getElementById("chatInput");
+        function nyMelding() {
+            if (chatInput.value.length > 0) {
+                let nyMelding = document.createElement('div');
+
+                nyMelding.classList.add("chatBoble","chatBobleRight");
+                nyMelding.innerText = chatInput.value;
+                chatInput.value = "";
+                chatContainer.append(nyMelding);
+            }
+
+        }
+    </script>
+</body>
+</html>

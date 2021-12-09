@@ -41,17 +41,17 @@
 
         <div>
             <button id="godta" class="button button-dark" style="width:150px;background-color: #337a26" ><i class="fa fa-check"></i></button>
-            <button class="button button-dark" style="width:150px;background-color: firebrick" onclick="nesteBruker(); skrivBruker();"><i class="fa fa-times"></i></button>
+            <button class="button button-dark" style="width:150px;background-color: firebrick" onclick="nesteBruker(); skrivBruker();"><i class="fa fa-times"></i> Neste</button>
         </div>
 
 
         <div class="navbar">
             <!--Interesser og medfølgende ikoner fra FontAwesome-->
-            <a class="aktivNav" href="Profil.html"><i class="fas fa-user"><div class="font">Profil</div></i></a>
-            <a><i class="fas fa-users"><div class="font">Match pref.</div></i></a>
-            <a><i class="fas fa-bell"><div class="font">Varslinger</div></i></a>
-            <a href="Chatlist.html"><i class="fas fa-comment-alt"><div class="font">Meldinger</div></i></a>
-            <a><i class="fas fa-user-cog"><div class="font">Innstillinger</div></i></a>
+            <a class="aktivNav" href="Profil.html"><i class="fas fa-user"></i><div class="font">Profil</div></a>
+            <a><i class="fas fa-users"></i><div class="font">Match pref.</div></a>
+            <a><i class="fas fa-bell"></i><div class="font">Varslinger</div></a>
+            <a href="Chatlist.html"><i class="fas fa-comment-alt"></i><div class="font">Meldinger</div></a>
+            <a><i class="fas fa-user-cog"></i><div class="font">Innstillinger</div></a>
         </div>
     </div>
 
@@ -60,7 +60,6 @@
         //script.js innholder const variabler med statiske brukere, interesser
 
         const egenBruker = JSON.parse(localStorage.getItem("bruker"));
-        console.log(egenBruker);
         let velkommen = document.getElementById("velkommen");
         let brukerContainer = document.getElementById("brukerContainer");
         let ikonerContainer = document.getElementById("ikoner");
@@ -68,9 +67,9 @@
 
 
         let brukerIndex = 0;
+        //søk i query parametere etter brukernavn slik at en spesifikk bruker kan vises via URL:
         const params = new URLSearchParams(window.location.search);
         const brukerNavn = params.get('brukerNavn');
-        console.log(brukerNavn);
         if (brukerNavn != null) {
             for (let i = 0; i < brukere.length; i++) {
                 if (brukere[i].brukernavn === brukerNavn)
