@@ -1,4 +1,4 @@
-
+//Statisk liste over eksisterende brukere som er synlige i applikasjonen
 const brukere = [
     {
         epost: "test@uia.no",
@@ -35,7 +35,7 @@ const brukere = [
     },
 ];
 
-
+//Liste over mulige interesser og medfølgende ikon
 const interesser = [
     ["Fotball", "fa-futbol"],
     ["Gaming", "fa-headset"],
