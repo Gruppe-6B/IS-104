@@ -36,7 +36,7 @@
         for (let i = 0; i < interesser.length; i++)
             lagIkon(interesser[i]);
 
-        //Genererer en rad med input og tekst basert på listen over spørsmål ("spm")
+        //genererer et ikon for interessen som input
         function lagIkon(item) {
             let div = document.createElement('div');
             div.classList.add("ikon","tooltip");
@@ -61,20 +61,16 @@
 
         }
 
-
         function fjernInteresse(txt) {
             valgteInteresser = valgteInteresser.filter(function(value, index, arr) {
                 return value !== txt;
             })
         }
 
-
-
-
         let submitButton = document.getElementById("submit-button");
         submitButton.addEventListener("click", function(e) {
             e.preventDefault();
-
+            //Lagre brukeren som et objekt og lagre det i localstorage for senere bruk
             const bruker = {
                 epost: localStorage.getItem("epost"),
                 brukernavn: localStorage.getItem("brukernavn"),
