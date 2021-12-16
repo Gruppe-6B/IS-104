@@ -37,7 +37,6 @@
         <button id="finnVenner" class="button button-dark" >FINN VENNER!</button>
 
         <div class="navbar">
-            <!--Interesser og medfølgende ikoner fra FontAwesome-->
             <a class="aktivNav" href="Profil.html"><i class="fas fa-user"></i><div class="font">Profil</div></a>
             <a><i class="fas fa-users"></i><div class="font">Match pref.</div></a>
             <a><i class="fas fa-bell"></i><div class="font">Varslinger</div></a>
@@ -60,21 +59,14 @@
         for (let i = 0; i < bruker.interesser.length; i++) {
             lagIkon(bruker.interesser[i]);
         }
-
-
-        //Genererer en rad med input og tekst basert på listen over spørsmål ("spm")
         function lagIkon(x) {
             let item = interesser.filter(function(value, index, arr) {
                 return value[0] === x;
             })[0];
             let div = document.createElement('div');
             div.classList.add("ikon","tooltip", "ikonselected", "ikonProfil");
-
-
             div.innerHTML = '<i class="fa ' + item[1] + '"></i>';
-
             ikonerContainer.append(div);
-
         }
 
 

@@ -40,12 +40,12 @@
             validering.innerHTML = "Passordet må inneholde minst 8 tegn";
         }
         else if (e.target.passord.value === e.target.bekreftpassord.value) {
+            //Passordet er gyldig - dette lagres til localstorage og blir brukt til login
             localStorage.setItem("passord", e.target.passord.value)
             window.location.href = "Personalia.html";
         }
         else {
             //feil brukernavn og/eller passord
-
             validering.innerHTML = "Passord er ikke skrevet inn riktig";
         }
 

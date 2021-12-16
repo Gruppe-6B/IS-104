@@ -1,3 +1,6 @@
+/* Denne filen inneholder css stiler for alle HTML filene for Vink prosjektet */
+
+/* Standard tekst stil for hele dokumentet */
 body{
     background-color: #333;
     margin: auto;
@@ -5,8 +8,9 @@ body{
     font-size: smaller;
 }
 
+/* Denne brukes i hvert view for å begrense størrelse og gi en mørk bakgrunn for større skjermer for å simulere visning i mobil-format. */
 .container {
-    display: flex;
+    display: flex; /* Flexbox blir brukt for å ha mer kontroll over plassering av elementer på sidene, som guide benyttet vi oss mye av https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
     flex-direction: column;
     align-items: center;
     max-width: 480px;
@@ -15,10 +19,11 @@ body{
     box-shadow: 3px 5px 10px rgba(0,0,0,0.7);
 }
 
+
 .navbar {
     margin-top: auto;
     display: flex;
-    flex-direction: row;
+    flex-direction: row; /* flexbox horisontal */
     align-items: center;
     justify-content: center;
     overflow: hidden;
@@ -32,6 +37,7 @@ body{
     font-size: 20px;
 }
 
+/* knappene i navigasjonsmenyen */
 .navbar a {
     float: left;
     display: block;
@@ -44,11 +50,11 @@ body{
     margin-bottom: auto;
     width:20%;
 }
-
 .navbar a:hover {
     background: #f1f1f1;
 }
 
+/* annen formatering for knappen som representerer siden som brukeren er på */
 .navbar .aktivNav {
     color: #337a26;
     background: rgba(255,255,255,0.4);
@@ -183,7 +189,7 @@ a {
     line-height: 74px;
     box-sizing: border-box;
     border: 3px solid #ccc;
-    border-radius: 50%;
+    border-radius: 50%; /* radius på 50% gir en sirkel */
     width: 80px;
     height: 80px;
     background-color: #F4F4F4;
@@ -295,7 +301,7 @@ a {
     background-color: #84a98c;
 }
 
-/* Tooltip fra w3schools.com - https://www.w3schools.com/css/css_tooltip.asp */
+/* Tooltip metode basert på guide fra w3schools.com - https://www.w3schools.com/css/css_tooltip.asp */
 /* Tooltip container */
 .tooltip {
     position: relative;

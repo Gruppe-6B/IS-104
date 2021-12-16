@@ -46,11 +46,10 @@
             skrivBrukerSamtale(bruker);
         }
 
-
+        //Skriver ut en linje for personen som linker til chat
         function skrivBrukerSamtale(bruker) {
-            console.log("test");
             let a = document.createElement('a');
-            a.href = 'chat.html?brukerNavn=' + bruker.brukernavn;
+            a.href = 'chat.html?brukerNavn=' + bruker.brukernavn; //legg til brukerNavn some query parameter
             a.classList.add("samtaleListeElement");
             a.innerHTML = '<i class="fa fa-user" style="color: #337a26; margin-right: 5px;"></i> ' + bruker.navn
 
